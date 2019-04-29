@@ -1,3 +1,54 @@
-<p>
-  models works!
-</p>
+<div class="left">
+  <h1>
+    Models
+  </h1>
+  <table>
+    <tr>
+      <th>
+        <p>Built Year:</p> 
+        <mat-form-field>
+          <mat-select [(ngModel)]="builtYear">
+              <mat-option value=0></mat-option>
+              <mat-option *ngFor="let year of builtYears;" value={{year}}>{{ year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </th>
+      <th>
+        <p>Make:</p> 
+        <mat-form-field>
+          <mat-select [(ngModel)]="make" >
+              <mat-option value=""></mat-option>
+              <mat-option *ngFor="let make of makes;" value={{make}}>{{ make }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </th> 
+      <th>
+        <button mat-button color="primary" (click)="loadCars()">Refresh</button>
+      </th>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>
+        <button mat-raised-button color="primary" (click)="decOffset()">Prev</button>
+      </th>
+      <th>
+        <button mat-raised-button color="primary" (click)="incOffset()">Next</button>
+        {{offset}}
+      </th>
+    </tr>
+  </table>
+
+  <mat-card *ngFor="let car of models">
+      <mat-card-title>
+        {{ car.model }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ car.make }} 
+      </mat-card-subtitle>
+      <mat-card-content>
+        ID: {{ car.id }} | Build Year: {{ car.year }}
+      </mat-card-content>
+  </mat-card>
+</div>
+

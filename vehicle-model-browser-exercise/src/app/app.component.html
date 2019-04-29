@@ -1,7 +1,12 @@
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="about">About</button>
-  <button mat-menu-item routerLink="models">Models</button>
-</mat-menu>
+<mat-toolbar color="primary">
+  <button mat-button color="basic" routerLink="about">About</button>
+  <button mat-button color="basic" routerLink="models">Models</button>
+  <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu  #menu="matMenu">
+    <button mat-menu-item routerLink="about" color="primary">About</button>
+    <button mat-menu-item routerLink="models" color="primary">Models</button>
+  </mat-menu> -->
+</mat-toolbar>
+
 
 <router-outlet></router-outlet>
